@@ -2,450 +2,524 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zainab Amjad – CV</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zainab Amjad | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --teal:       #2d6272;
-      --teal-dark:  #1e4a57;
-      --teal-light: #3a7d8e;
-      --accent:     #e8b86d;
-      --bg:         #ffffff;
-      --panel:      #edf3f5;
-      --text:       #222222;
-      --muted:      #555555;
-      --border:     #c8dde3;
+      --primary: #0f766e;
+      --primary-light: #f0fdfa;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --bg: #f1f5f9;
+      --white: #ffffff;
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Open Sans', sans-serif;
-      background: #d8e8ed;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: clamp(12px, 3vw, 30px) clamp(8px, 2vw, 16px);
-    }
-
-    /* ── PAGE ── */
-    .page {
+      font-family: "Inter", system-ui, sans-serif;
       background: var(--bg);
-      width: 100%;
-      max-width: 860px;
-      box-shadow: 0 8px 40px rgba(0,0,0,.18);
+      color: var(--text);
+      line-height: 1.5;
+      font-size: 14.5px;
     }
 
-    /* ── HEADER ── */
-    header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: clamp(12px, 2.5vw, 22px);
-      padding: clamp(16px, 3.5vw, 28px) clamp(16px, 4vw, 32px) clamp(14px, 3vw, 22px);
-      border-bottom: 2px solid var(--border);
-    }
-    .avatar {
-      width: clamp(60px, 10vw, 82px);
-      height: clamp(60px, 10vw, 82px);
-      border-radius: 50%;
-      background: var(--panel);
-      border: 3px solid var(--border);
-      flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
+    .page {
+      max-width: 860px;
+      margin: 28px auto;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
       overflow: hidden;
     }
-    .avatar svg { width: 60%; height: 60%; opacity: .55; }
 
-    .header-text { flex: 1; min-width: 180px; }
-    .header-text h1 {
-      font-family: 'Raleway', sans-serif;
-      font-size: clamp(1.4rem, 4vw, 2rem);
-      font-weight: 800;
-      color: var(--teal-dark);
-      letter-spacing: .5px;
-      line-height: 1.1;
-    }
-    .header-text .subtitle {
-      font-size: clamp(.75rem, 1.8vw, .85rem);
-      font-weight: 600;
-      color: var(--teal-light);
-      margin: 3px 0 7px;
-      letter-spacing: .3px;
-    }
-    .header-text .tagline {
-      font-size: clamp(.7rem, 1.6vw, .78rem);
-      color: var(--muted);
-      font-style: italic;
-      line-height: 1.45;
-    }
-    .header-contact {
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+      color: white;
+      padding: 28px 36px 24px;
       display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: clamp(.7rem, 1.6vw, .78rem);
-      color: var(--teal-dark);
-      word-break: break-all;
-      align-self: flex-start;
-      margin-top: 4px;
-      flex-shrink: 0;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
     }
-    .header-contact svg { flex-shrink: 0; }
 
-    /* ── BODY GRID ── */
-    .body {
+    .header-left h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .header-left .role {
+      font-size: 14px;
+      opacity: 0.92;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      font-size: 13px;
+      opacity: 0.95;
+    }
+
+    .contact-row a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-row a:hover { text-decoration: underline; }
+
+    .header-right {
+      text-align: right;
+      font-size: 13px;
+      opacity: 0.9;
+      white-space: nowrap;
+    }
+
+    /* ===== BODY ===== */
+    .content {
+      padding: 28px 36px 32px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 240px;
+      gap: 32px;
     }
 
-    /* ── LEFT COLUMN ── */
-    .left {
-      padding: clamp(14px, 3vw, 24px) clamp(14px, 2.5vw, 22px) clamp(14px, 3vw, 24px) clamp(16px, 4vw, 32px);
-      border-right: 1.5px solid var(--border);
-    }
-
-    /* ── RIGHT COLUMN ── */
-    .right {
-      padding: clamp(14px, 3vw, 24px) clamp(16px, 4vw, 32px) clamp(14px, 3vw, 24px) clamp(14px, 2.5vw, 22px);
-    }
-
-    /* ── SECTION ── */
-    section { margin-bottom: clamp(16px, 3vw, 24px); }
-    section:last-child { margin-bottom: 0; }
+    /* Left column */
+    .main-col section { margin-bottom: 22px; }
+    .main-col section:last-child { margin-bottom: 0; }
 
     .section-title {
-      font-family: 'Raleway', sans-serif;
-      font-size: clamp(.65rem, 1.5vw, .72rem);
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 700;
       text-transform: uppercase;
-      border-bottom: 2px solid var(--teal);
-      padding-bottom: 4px;
-      margin-bottom: clamp(10px, 2vw, 14px);
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 5px;
+      margin-bottom: 12px;
     }
 
-    /* ── WORK EXP ── */
-    .job-title {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      font-size: clamp(.78rem, 1.8vw, .88rem);
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-    .job-note {
-      font-size: clamp(.74rem, 1.7vw, .82rem);
+    /* About */
+    .about p {
       color: var(--muted);
-      font-style: italic;
+      font-size: 14px;
+      line-height: 1.6;
     }
 
-    /* ── EDUCATION ── */
-    .edu-label {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      font-size: clamp(.74rem, 1.7vw, .82rem);
-      color: var(--text);
-      margin-bottom: 1px;
+    /* Education */
+    .edu-item {
+      margin-bottom: 12px;
     }
-    .edu-degree {
-      font-size: clamp(.8rem, 1.8vw, .88rem);
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .edu-item h3 {
+      font-size: 14.5px;
       font-weight: 600;
-      color: var(--text);
     }
-    .edu-meta {
-      font-size: clamp(.7rem, 1.5vw, .78rem);
-      font-style: italic;
-      color: var(--teal-light);
-    }
-    .edu-dates {
-      font-size: clamp(.68rem, 1.4vw, .76rem);
+
+    .edu-item .date {
+      font-size: 12.5px;
       color: var(--muted);
-      margin: 3px 0 10px;
-      display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
-    }
-    .edu-dates span { display: flex; align-items: center; gap: 4px; }
-    .divider { color: var(--border); }
-
-    .courses-label {
-      font-size: clamp(.68rem, 1.4vw, .74rem);
-      font-weight: 700;
-      color: var(--teal);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
-    .courses-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3px 8px;
-    }
-    .courses-grid li {
-      list-style: disc;
-      margin-left: 14px;
-      font-size: clamp(.68rem, 1.4vw, .76rem);
-      color: var(--text);
+      white-space: nowrap;
     }
 
-    /* ── SKILLS PANEL ── */
-    .skills-panel {
-      background: var(--panel);
-      border: 1px solid var(--border);
+    .edu-item .school {
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .edu-item .meta {
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    /* Courses */
+    .courses {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .course-tag {
+      background: var(--primary-light);
+      color: #0f766e;
+      border: 1px solid #99f6e4;
+      padding: 3px 9px;
       border-radius: 4px;
-      padding: clamp(8px, 1.5vw, 10px) clamp(10px, 2vw, 12px);
-      font-size: clamp(.68rem, 1.4vw, .76rem);
-      color: var(--text);
-      line-height: 1.65;
+      font-size: 12px;
+      font-weight: 500;
     }
-    .skills-panel strong { color: var(--teal-dark); font-weight: 700; }
 
-    /* ── PROJECT ── */
-    .project { margin-bottom: clamp(12px, 2.5vw, 18px); }
-    .project:last-child { margin-bottom: 0; }
-    .project-title {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      font-size: clamp(.78rem, 1.8vw, .88rem);
-      color: var(--text);
+    /* Projects */
+    .project {
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
     }
-    .project-role {
-      font-size: clamp(.7rem, 1.5vw, .78rem);
-      color: var(--teal-light);
-      margin: 1px 0 5px;
+    .project:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
     }
-    .project-desc {
-      font-size: clamp(.68rem, 1.4vw, .76rem);
+
+    .project h3 {
+      font-size: 14.5px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .project p {
       color: var(--muted);
-      font-style: italic;
+      font-size: 13.5px;
+      margin-bottom: 7px;
       line-height: 1.55;
     }
 
-    /* ── LANGUAGES ── */
-    .lang-name {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      font-size: clamp(.76rem, 1.8vw, .86rem);
-      color: var(--text);
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tech {
+      background: #f1f5f9;
+      color: #334155;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11.5px;
+      font-weight: 500;
+    }
+
+    /* Achievements */
+    .achievement {
+      margin-bottom: 11px;
+    }
+    .achievement:last-child { margin-bottom: 0; }
+
+    .achievement h4 {
+      font-size: 13.5px;
+      font-weight: 600;
       margin-bottom: 2px;
     }
-    .lang-level {
-      font-size: clamp(.68rem, 1.4vw, .76rem);
-      color: var(--teal-light);
-      font-style: italic;
+
+    .achievement p {
+      color: var(--muted);
+      font-size: 13px;
       line-height: 1.5;
     }
 
-    /* ── INTERESTS PANEL ── */
-    .interests-panel {
-      background: var(--panel);
-      border: 1px solid var(--border);
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      border-left: 1px solid var(--border);
+      padding-left: 24px;
+    }
+
+    .sidebar section {
+      margin-bottom: 22px;
+    }
+    .sidebar section:last-child { margin-bottom: 0; }
+
+    .sidebar .section-title {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .skill-group {
+      margin-bottom: 12px;
+    }
+    .skill-group:last-child { margin-bottom: 0; }
+
+    .skill-group h4 {
+      font-size: 11.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skill {
+      background: var(--primary);
+      color: white;
+      padding: 3px 8px;
       border-radius: 4px;
-      padding: clamp(8px, 1.5vw, 10px) clamp(10px, 2vw, 12px);
-      font-size: clamp(.68rem, 1.4vw, .76rem);
-      color: var(--text);
-      line-height: 1.65;
+      font-size: 12px;
+      font-weight: 500;
     }
 
-    /* ── LEFT ACCENT BARS ── */
-    .bar-item { display: flex; gap: 0; }
-    .bar {
-      width: 4px;
-      min-height: 100%;
-      background: var(--teal);
-      border-radius: 2px;
-      flex-shrink: 0;
-      margin-right: 10px;
+    .interests-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
     }
-    .bar-content { flex: 1; }
 
-    /* ══════════════════════════════════════════
-       TABLET  ≤ 680px  →  single column
-    ══════════════════════════════════════════ */
-    @media (max-width: 680px) {
-      .body {
-        grid-template-columns: 1fr;
-      }
-      .left {
-        border-right: none;
-        border-bottom: 1.5px solid var(--border);
-        padding: 18px 18px 18px 18px;
-      }
-      .right {
-        padding: 18px 18px 18px 18px;
-      }
+    .interest {
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 10px;
+      position: relative;
+    }
 
+    .interest::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+      padding: 12px 36px;
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .page { margin: 0; border-radius: 0; }
       header {
         flex-direction: column;
-        align-items: flex-start;
+        padding: 22px 20px;
       }
-      .header-contact {
-        align-self: flex-start;
-        margin-top: 0;
-        white-space: normal;
-      }
-      .courses-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    /* ══════════════════════════════════════════
-       MOBILE  ≤ 420px
-    ══════════════════════════════════════════ */
-    @media (max-width: 420px) {
-      header {
-        padding: 14px 14px 12px;
-      }
-      .left, .right {
-        padding: 14px 14px;
-      }
-      .courses-grid {
+      .header-right { text-align: left; }
+      .content {
         grid-template-columns: 1fr;
+        padding: 22px 20px 28px;
+        gap: 24px;
       }
-      .avatar {
-        width: 56px;
-        height: 56px;
+      .sidebar {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+        padding-top: 20px;
       }
-      .header-text h1 {
-        font-size: 1.35rem;
-      }
+      footer { padding: 12px 20px; }
     }
 
     @media print {
-      body { background: white; padding: 0; }
-      .page { box-shadow: none; max-width: 100%; }
-      .body { grid-template-columns: 1fr 1fr; }
-      .left {
-        border-right: 1.5px solid var(--border);
-        border-bottom: none;
+      body { background: white; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
       }
     }
   </style>
 </head>
 <body>
-<div class="page">
+  <div class="page">
 
-  <!-- HEADER -->
-  <header>
-    <div class="avatar">
-      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="40" cy="28" r="16" fill="#2d6272" opacity=".5"/>
-        <ellipse cx="40" cy="68" rx="26" ry="18" fill="#2d6272" opacity=".4"/>
-      </svg>
-    </div>
-    <div class="header-text">
-      <h1>ZAINAB AMJAD</h1>
-      <div class="subtitle">Software Engineering Student</div>
-      <div class="tagline">Currently in 6th semester of Software Engineering,<br>seeking an entry‑level role to apply problem‑solving<br>and development skills.</div>
-    </div>
-    <div class="header-contact">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2d6272" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-      </svg>
-      zainabamjadrana00@gmail.com
-    </div>
-  </header>
-
-  <!-- BODY -->
-  <div class="body">
-
-    <!-- LEFT -->
-    <div class="left">
-
-      <!-- WORK EXPERIENCE -->
-      <section>
-        <div class="section-title">Work Experience</div>
-        <div class="bar-item">
-          <div class="bar"></div>
-          <div class="bar-content">
-            <div class="job-title">Title / Position</div>
-            <div class="job-note">"Seeking first experience"</div>
-            <div style="font-size:.74rem;color:var(--muted);margin-top:3px;">Oct 2023 – Jul 2027</div>
-          </div>
+    <!-- Header -->
+    <header>
+      <div class="header-left">
+        <h1>Zainab Amjad</h1>
+        <div class="role">Software Engineering Student · AI & Web Development</div>
+        <div class="contact-row">
+          <span>📍 Sialkot, Pakistan</span>
+          <span>📞 <a href="tel:+923206724618">(0320) 6724618</a></span>
+          <span>✉️ <a href="mailto:zainabamjadrana00@gmail.com">zainabamjadrana00@gmail.com</a></span>
         </div>
-      </section>
+      </div>
+      <div class="header-right">
+        6th Semester<br />
+        Expected Grad: July 2027
+      </div>
+    </header>
 
-      <!-- EDUCATION -->
-      <section>
-        <div class="section-title">Education</div>
-        <div class="bar-item">
-          <div class="bar"></div>
-          <div class="bar-content">
-            <div class="edu-label">Study Program</div>
-            <div class="edu-degree">Bachelors in Software Engineering</div>
-            <div class="edu-meta">University of Management and Technology</div>
-            <div class="edu-dates">
-              <span>Oct 2023 – Jul 2027</span>
-              <span class="divider">|</span>
-              <span>Sialkot, Pakistan</span>
-              <span class="divider">|</span>
-              <span>GPA: 3.32</span>
+    <!-- Content -->
+    <div class="content">
+
+      <!-- LEFT COLUMN -->
+      <div class="main-col">
+
+        <section class="about">
+          <h2 class="section-title">Objective</h2>
+          <p>
+            Currently enrolled in a Bachelor’s degree in Software Engineering (6th Semester), seeking an entry-level position where I can apply my technical knowledge, problem-solving skills, and passion for software development. Eager to learn, grow, and contribute to a dynamic team.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="section-title">Education</h2>
+          <div class="edu-item">
+            <div class="edu-top">
+              <h3>Bachelor’s in Software Engineering</h3>
+              <span class="date">Mar 2026</span>
             </div>
-            <div class="courses-label">Courses</div>
-            <ul class="courses-grid">
-              <li>Machine Learning</li>
-              <li>Data Base</li>
-              <li>Computer Networks</li>
-              <li>Cyber Forensics</li>
-              <li>Web Technologies</li>
-              <li>Information Security</li>
-            </ul>
+            <div class="school">University of Management and Technology (UMT), Sialkot</div>
+            <div class="meta">CGPA: 2.79 &nbsp;|&nbsp; Last Semester GPA: 3.38</div>
           </div>
-        </div>
-      </section>
-
-    </div><!-- /left -->
-
-    <!-- RIGHT -->
-    <div class="right">
-
-      <!-- SKILLS -->
-      <section>
-        <div class="section-title">Skills</div>
-        <div class="skills-panel">
-          <strong>TECHNICAL SKILLS</strong> &bull; Programming Languages: C++, Python &bull; Web Technologies: HTML, CSS, JavaScript &bull; Database: MySQL / SQL &bull; Tools &amp; Platforms: Git, Visual Studio Code &bull; Concepts: OOP, Data Structures
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section>
-        <div class="section-title">Projects</div>
-
-        <div class="project">
-          <div class="project-title">Vehicles Management System Maintenance &amp; Tracking</div>
-          <div class="project-role">Front End Developer</div>
-          <div class="project-desc">
-            Developed a web-based system to manage vehicle registration, availability tracking, booking, and maintenance history. Implemented features to store vehicle details, monitor status (available/booked/maintenance), and log service records. Technologies Used: HTML, CSS, JavaScript (Frontend), Python (Backend), Database Integration, AI integration
+          <div class="edu-item">
+            <div class="edu-top">
+              <h3>FSc in Medical Sciences</h3>
+              <span class="date">Apr 2022</span>
+            </div>
+            <div class="school">Punjab Group of Colleges, Civilians Campus, Gujranwala</div>
+            <div class="meta">Grade: B</div>
           </div>
-        </div>
+        </section>
 
-        <div class="project">
-          <div class="project-title">Medicare AI Advanced System</div>
-          <div class="project-role">Front End Developer</div>
-          <div class="project-desc">
-            Developed an AI-based platform where users register, enter symptoms, and receive predicted diseases, suggested medications, home remedies, and doctor recommendations. Managed the database for efficient data storage and retrieval. Technologies Used: HTML, CSS, JavaScript (Frontend), Python (Backend), Database Integration
+        <section>
+          <h2 class="section-title">Relevant Courses</h2>
+          <div class="courses">
+            <span class="course-tag">Data Structures</span>
+            <span class="course-tag">Analysis of Algorithms</span>
+            <span class="course-tag">Artificial Intelligence</span>
+            <span class="course-tag">System Programming</span>
+            <span class="course-tag">Web Technologies</span>
+            <span class="course-tag">Cyber Forensics</span>
+            <span class="course-tag">Information Security</span>
+            <span class="course-tag">Machine Learning</span>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- LANGUAGES -->
-      <section>
-        <div class="section-title">Languages</div>
-        <div class="lang-name">English</div>
-        <div class="lang-level">Professional Working Proficiency</div>
-      </section>
+        <section>
+          <h2 class="section-title">Projects</h2>
+          <div class="project">
+            <h3>Medicare AI – Advanced System</h3>
+            <p>
+              AI-based platform where users register, enter symptoms, and receive predicted diseases, suggested medications, home remedies, and doctor recommendations. Managed the database for efficient data storage and retrieval.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">HTML</span>
+              <span class="tech">CSS</span>
+              <span class="tech">JavaScript</span>
+              <span class="tech">Python</span>
+              <span class="tech">Database</span>
+              <span class="tech">AI Integration</span>
+            </div>
+          </div>
+          <div class="project">
+            <h3>Vehicle Management & Maintenance System</h3>
+            <p>
+              Web-based system to manage vehicle registration, availability tracking, booking, and maintenance history. Features include storing vehicle details, monitoring status (available / booked / maintenance), and logging service records.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">HTML</span>
+              <span class="tech">CSS</span>
+              <span class="tech">JavaScript</span>
+              <span class="tech">Python</span>
+              <span class="tech">Database</span>
+            </div>
+          </div>
+        </section>
 
-      <!-- INTERESTS -->
-      <section>
-        <div class="section-title">Interests</div>
-        <div class="interests-panel">
-          Software Development, Web Designer, Cyber Forensics and Security, Learning New Technologies
-        </div>
-      </section>
+        <section>
+          <h2 class="section-title">Achievements & Certifications</h2>
+          <div class="achievement">
+            <h4>Top 5 Finalist – CreateX AI App Development Hackathon (2026)</h4>
+            <p>Secured a Top 5 position and received a Certificate of Achievement for developing an innovative AI-powered application.</p>
+          </div>
+          <div class="achievement">
+            <h4>AI Masterclass 3.0 – Dhruv Rathee (2026)</h4>
+            <p>Successfully completed the AI Masterclass 3.0 and earned a certificate of completion.</p>
+          </div>
+          <div class="achievement">
+            <h4>Google AI Fundamentals Badge (2026)</h4>
+            <p>Earned the Google AI Fundamentals badge, demonstrating foundational knowledge of AI concepts and tools.</p>
+          </div>
+        </section>
 
-    </div><!-- /right -->
+      </div>
 
-  </div><!-- /body -->
-</div><!-- /page -->
+      <!-- RIGHT SIDEBAR -->
+      <aside class="sidebar">
+
+        <section>
+          <h2 class="section-title">Skills</h2>
+          <div class="skill-group">
+            <h4>Programming</h4>
+            <div class="skill-list">
+              <span class="skill">C++</span>
+              <span class="skill">Python</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Web</h4>
+            <div class="skill-list">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Database</h4>
+            <div class="skill-list">
+              <span class="skill">MySQL / SQL</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Tools</h4>
+            <div class="skill-list">
+              <span class="skill">Git</span>
+              <span class="skill">VS Code</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Concepts</h4>
+            <div class="skill-list">
+              <span class="skill">OOP</span>
+              <span class="skill">DSA</span>
+              <span class="skill">Algorithms</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Design</h4>
+            <div class="skill-list">
+              <span class="skill">UI/UX</span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">Interests</h2>
+          <div class="interests-list">
+            <span class="interest">Software Development</span>
+            <span class="interest">Web Design</span>
+            <span class="interest">Cyber Forensics & Security</span>
+            <span class="interest">Learning New Technologies</span>
+          </div>
+        </section>
+
+      </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      References available upon request · 
+    </footer>
+
+  </div>
 </body>
 </html>
